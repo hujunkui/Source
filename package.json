@@ -33,7 +33,7 @@
   },
   "yuqueConfig": {
     "baseUrl": "https://www.yuque.com/api/v2",
-    "login": "yid75o",
+    "login": "hujunkui",
     "repo": "blog",
     "mdNameFormat": "title",
     "postPath": "source/_posts",
