@@ -24,7 +24,19 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: "12.x"
-    
+    - name: 安装COS相关依赖
+      run: |
+          sudo pip install coscmd
+          sudo pip install tccli
+    - name: 配置COS
+      env:
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: |
+        coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+        tccli configure set secretId $SECRET_ID
+        tccli configure set secretKey $SECRET_KEY
+        tccli configure set region $REGION
     # from https://github.com/x-cold/yuque-hexo
     - name: Setup Hexo Dependencies and Generate Public Files
       env:
