@@ -37,6 +37,14 @@
     "repo": "ulkw7v",
     "mdNameFormat": "title",
     "postPath": "source/_posts",
-    "onlyPublished": false
+    "onlyPublished": false,
+     "imgCdn": {
+      "enabled": true,
+      "imageBed": "oss",
+      "host": "",
+      "bucket": "cuberkpic",
+      "region": "oss-cn-shanghai",
+      "prefixKey": "blog/image"
+    }
   }
 }
