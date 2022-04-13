@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@master 
       
     # from: https://github.com/actions/setup-node  
-    - name: Setup Node.js 10.x 
+    - name: Setup Node.js 12.x 
       uses: actions/setup-node@master
       with:
         node-version: "12.x"
@@ -29,6 +29,8 @@ jobs:
     - name: Setup Hexo Dependencies and Generate Public Files
       env:
         YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         npm install hexo-cli -g
         npm install yuque-hexo -g
